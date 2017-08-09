@@ -20,13 +20,26 @@ namespace AlarmApp
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+    
+    
     public sealed partial class MainPage : Page
     {
+        DispatcherTimer ClockTimer;
         public MainPage()
         {
             this.InitializeComponent();
+            ClockTimer = new DispatcherTimer();
+            ClockTimer.Tick += ClockTimer_Tick;
+            ClockTimer.Interval = new TimeSpan(0, 0, 1);
+            ClockTimer.Start();
         }
 
+        private void ClockTimer_Tick(object sender, object e)
+        {
+            this.txtBox_Time.Text = DateTime.Now.ToString("hh:mm");
+            this.txtBox_AMPM.Text = DateTime.Now.ToString("tt");
+        }
+        
         private void btn_Snooze_Click(object sender, RoutedEventArgs e)
         {
 
