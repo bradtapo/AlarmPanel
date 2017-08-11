@@ -9,11 +9,12 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="btn_Snooze" Content="Snooze" HorizontalAlignment="Left" Margin="88,492,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.491,3.345" Width="158" Height="83" Click="btn_Snooze_Click"/>
-        <Button x:Name="btn_Dismiss" Content="Dismiss" HorizontalAlignment="Left" Margin="530,492,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.491,3.345" Width="158" Height="83" Click="btn_Dismiss_Click"/>
+        <Button x:Name="btn_Dismiss" Content="Dismiss" HorizontalAlignment="Left" Margin="311,492,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.491,3.345" Width="158" Height="83" Click="btn_Dismiss_Click"/>
         <Button x:Name="btn_Source" Content="Source" HorizontalAlignment="Left" Margin="831,492,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.491,3.345" Width="158" Height="83" Click="btn_Source_Click"/>
         <Button x:Name="btn_CloseNPR" Content="Close NPR" HorizontalAlignment="Left" Margin="831,373,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.491,3.345" Width="158" Height="83" Click="btn_CloseNPR_Click"/>
         <TextBox x:Name="txtBox_Time" HorizontalAlignment="Right" Margin="0,34,131,0" TextWrapping="Wrap" Text="99:99" VerticalAlignment="Top" Width="837" Height="366" TextChanged="txtBox_Time_TextChanged" FontSize="300" FontWeight="Bold" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="0,0,0,0" IsReadOnly="True"/>
         <TextBox x:Name="txtBox_AMPM" HorizontalAlignment="Left" Margin="869,34,0,0" TextWrapping="Wrap" Text="test" VerticalAlignment="Top" Width="120" Height="99" FontSize="24" FontWeight="Bold"/>
+        <ComboBox x:Name="ddl_AudioSources" HorizontalAlignment="Left" Height="56" Margin="520,506,0,0" VerticalAlignment="Top" Width="306" RenderTransformOrigin="0.293,0.134"/>
 
     </Grid>
 </Page>
