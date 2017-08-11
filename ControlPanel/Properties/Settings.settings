@@ -1,7 +1,24 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ControlPanel.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MainAudio" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Speakers (Intel SST Audio Device (WDM))</Value>
+    </Setting>
+    <Setting Name="SecondaryAudio" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Headphones (JAMBOX by Jawbone Stereo)</Value>
+    </Setting>
+    <Setting Name="AlarmApp" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">shell:AppsFolder\NPROne.NPROne_301e00acq7vap!App</Value>
+    </Setting>
+    <Setting Name="OfflineAlarmSound" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DailyAlarm" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)">08/10/2017 07:20:00</Value>
+    </Setting>
+    <Setting Name="DailyAlarmEnable" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

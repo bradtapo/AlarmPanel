@@ -22,6 +22,7 @@ namespace ControlPanel
         public Settings()
         {
             InitializeComponent();
+            
 
         }
 
