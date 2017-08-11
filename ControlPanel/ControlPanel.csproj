@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EndPointController.exe" />
+    <Resource Include="full-screen-icon-6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

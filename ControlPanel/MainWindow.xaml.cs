@@ -32,6 +32,7 @@ namespace ControlPanel
         private int deviceCount;
         private int currentDeviceId;
         private static List<int> qDevices;
+        private bool WindowFullscreen;
 
         public MainWindow()
         {
@@ -41,6 +42,9 @@ namespace ControlPanel
             ClockTimer.Tick += ClockTimer_Tick;
             ClockTimer.Interval = new TimeSpan(0, 0, 1);
             ClockTimer.Start();
+
+            // Start in full screen
+            WindowFullscreen = true;
 
             // Get and populate audio sources
             qDevices = new List<int>();
@@ -186,6 +190,34 @@ namespace ControlPanel
             settingsWindow = new Settings();
             settingsWindow.Show();
             
+        }
+
+        private void btn_CloseNpr_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Fullscreen_Click(object sender, RoutedEventArgs e)
+        {
+            if(WindowFullscreen)
+            {
+                this.WindowState = WindowState.Normal;
+                this.WindowStyle = WindowStyle.SingleBorderWindow;
+                this.ResizeMode = ResizeMode.CanResize;
+                WindowFullscreen = false;
+            }
+            else
+            {
+                this.WindowStyle = WindowStyle.None;
+                this.WindowState = WindowState.Maximized;
+                this.ResizeMode = ResizeMode.NoResize;
+                WindowFullscreen = true;
+            }
+        }
+
+        private void Image_GotFocus(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControlPanel"
         mc:Ignorable="d"
-        Title="Settings" Height="300" Width="300">
+        
+        Title="Settings" Height="300" Width="300" Topmost="True">
     
     <Grid>
         <ComboBox x:Name="cmbox_MainAudio" HorizontalAlignment="Left" Margin="37,30,0,0" VerticalAlignment="Top" Width="221"/>

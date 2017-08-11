@@ -5,15 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControlPanel"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowState="Maximized"
         Title="MainWindow" Height="720" Width="1300">
-    <Grid OpacityMask="Black" Background="Black">
-        <ComboBox x:Name="cmbox_AudioSource" HorizontalAlignment="Left" Margin="897,511,0,0" VerticalAlignment="Top" Width="211" SelectionChanged="cmbox_AudioSource_SelectionChanged"/>
-        <Label x:Name="lbl_Time"  Content="99:99" HorizontalAlignment="Left" Margin="80,20,0,0" VerticalAlignment="Top" Width="792" Height="371" FontSize="300" BorderBrush="#FFC57070" Foreground="White"/>
-        <Label x:Name="lbl_AMPM" Content="Label" HorizontalAlignment="Left" Margin="879,118,0,0" VerticalAlignment="Top" FontSize="50" Foreground="White"/>
-        <Button x:Name="btn_Snooze" Content="Snooze" HorizontalAlignment="Left" Margin="120,472,0,0" VerticalAlignment="Top" Width="204" Height="103" FontSize="22" Click="btn_Snooze_Click"/>
-        <Button x:Name="btn_Dismiss" Content="Dismiss" HorizontalAlignment="Left" Margin="499,472,0,0" VerticalAlignment="Top" Width="202" Height="103" FontSize="22" Click="btn_Dismiss_Click"/>
-        <Button x:Name="btn_CloseNpr" Content="NPR" HorizontalAlignment="Left" Margin="918,549,0,0" VerticalAlignment="Top" Width="80" Height="32" FontSize="22"/>
-        <Button x:Name="btn_Settings" Content="Settings" HorizontalAlignment="Left" Margin="1035,267,0,0" VerticalAlignment="Top" Width="202" Height="103" FontSize="22" Click="btn_Settings_Click"/>
+    <Grid OpacityMask="Black" Background="Black" Focusable="True">
+        <ComboBox x:Name="cmbox_AudioSource" HorizontalAlignment="Left" Margin="923,582,0,0" VerticalAlignment="Top" Width="211" SelectionChanged="cmbox_AudioSource_SelectionChanged"/>
+        <Label x:Name="lbl_Time"  Content="99:99" HorizontalAlignment="Left" Margin="28,-129,0,0" VerticalAlignment="Top" Width="1084" Height="534" FontSize="450" BorderBrush="#FFC57070" Foreground="White"/>
+        <Label x:Name="lbl_AMPM" Content="Label" HorizontalAlignment="Left" Margin="1112,64,0,0" VerticalAlignment="Top" FontSize="50" Foreground="White"/>
+        <Button x:Name="btn_Snooze" Content="Snooze" HorizontalAlignment="Left" Margin="102,474,0,0" VerticalAlignment="Top" Width="204" Height="103" FontSize="22" Click="btn_Snooze_Click" RenderTransformOrigin="0.675,1.534"/>
+        <Button x:Name="btn_Dismiss" Content="Dismiss" HorizontalAlignment="Left" Margin="413,474,0,0" VerticalAlignment="Top" Width="202" Height="103" FontSize="22" Click="btn_Dismiss_Click"/>
+        <Button x:Name="btn_CloseNpr" Content="NPR" HorizontalAlignment="Left" Margin="944,609,0,0" VerticalAlignment="Top" Width="80" Height="43" FontSize="22" Click="btn_CloseNpr_Click" RenderTransformOrigin="-0.686,0.169"/>
+        <Button x:Name="btn_Settings" Content="Settings" HorizontalAlignment="Left" Margin="1059,474,0,0" VerticalAlignment="Top" Width="202" Height="103" FontSize="22" Click="btn_Settings_Click"/>
+        <Button x:Name="btn_Fullscreen" HorizontalAlignment="Left" Margin="1193,616,0,0" VerticalAlignment="Top" Width="80" Height="80" FontSize="22" Click="btn_Fullscreen_Click">
+            <StackPanel>
+                <Image Source="full-screen-icon-6.png" Width="74">
+                    
+                </Image>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Window>
