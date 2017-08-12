@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Configuration;
 
 namespace ControlPanel
 {
@@ -33,6 +34,8 @@ namespace ControlPanel
         private int currentDeviceId;
         private static List<int> qDevices;
         private bool WindowFullscreen;
+        private bool NPRIsRunning;
+        private Process NPRProcess;
 
         public MainWindow()
         {
@@ -42,6 +45,7 @@ namespace ControlPanel
             ClockTimer.Tick += ClockTimer_Tick;
             ClockTimer.Interval = new TimeSpan(0, 0, 1);
             ClockTimer.Start();
+            NPRIsRunning = false;
 
             // Start in full screen
             WindowFullscreen = true;
@@ -166,12 +170,7 @@ namespace ControlPanel
 
                 SelectDevice(tuple.Item1);
                 break;
-            }
-
-            
-            
-            
-            
+            }   
         }
 
         private void btn_Snooze_Click(object sender, RoutedEventArgs e)
@@ -192,9 +191,66 @@ namespace ControlPanel
             
         }
 
+        private bool NPR_CheckServiceRunning()
+        {
+            var NprProcesses = Process.GetProcesses().
+                                 Where(pr => pr.ProcessName.Contains("NPROne"));
+
+            if(NprProcesses.Count() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void NPR_Toggle()
+        {
+            string mainAudioProgram = ConfigurationSettings.AppSettings.Get("MainAudioProgram");
+            if (NPRIsRunning)
+            {
+
+                var NprProcesses = Process.GetProcesses().
+                                 Where(pr => pr.ProcessName.Contains("NPROne"));
+
+                foreach (var process in NprProcesses)
+                {
+                    process.Kill();
+                }
+                NPRIsRunning = false;
+
+            }
+            else
+            {
+                NPRProcess = new Process
+                {
+                    StartInfo =
+                                {
+                                    UseShellExecute = true,
+                                    RedirectStandardOutput = false,
+                                    CreateNoWindow = false,
+                                    FileName = mainAudioProgram
+
+                                }
+                };
+                try
+                {
+                    NPRProcess.Start();
+                    NPRIsRunning = true;
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
+
         private void btn_CloseNpr_Click(object sender, RoutedEventArgs e)
         {
-
+            NPR_Toggle();
         }
 
         private void btn_Fullscreen_Click(object sender, RoutedEventArgs e)
@@ -219,5 +275,6 @@ namespace ControlPanel
         {
 
         }
+
     }
 }
