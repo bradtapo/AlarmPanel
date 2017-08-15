@@ -54,9 +54,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlarmWindow.xaml.cs">
+      <DependentUpon>AlarmWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\AlarmManager.cs" />
+    <Compile Include="Models\Alarm.cs" />
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Page Include="AlarmWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -102,7 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EndPointController.exe" />
-    <Resource Include="full-screen-icon-6.png" />
+    <Content Include="icons\edit.svg" />
+    <Resource Include="icons\trash1600.png" />
+    <Resource Include="icons\full-screen-icon-6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

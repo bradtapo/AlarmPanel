@@ -17,7 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Configuration;
-
+using ControlPanel.Managers;
 namespace ControlPanel
 {
     /// <summary>
@@ -36,6 +36,7 @@ namespace ControlPanel
         private bool WindowFullscreen;
         private bool NPRIsRunning;
         private Process NPRProcess;
+        private AlarmManager alarmManager;
 
         public MainWindow()
         {
@@ -46,6 +47,7 @@ namespace ControlPanel
             ClockTimer.Interval = new TimeSpan(0, 0, 1);
             ClockTimer.Start();
             NPRIsRunning = false;
+            alarmManager = new AlarmManager();
 
             // Start in full screen
             WindowFullscreen = true;
